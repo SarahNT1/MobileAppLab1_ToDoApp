@@ -27,7 +27,7 @@ export default function App() {
             </View>
 
             <View style={[styles.itemContainer3, styles.itemCollective]}>
-            <Text style={styles.text}>
+              <Text style={styles.text}>
                 -Mobile Development App: Lab 1
               </Text>
             </View>
