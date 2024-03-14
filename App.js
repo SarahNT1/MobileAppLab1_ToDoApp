@@ -1,12 +1,18 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, SafeAreaView } from 'react-native';
+import { useState } from 'react';
 import ToDoList from './components/ToDoList';
 import ToDoForm from './components/ToDoForm';
 
 export default function App() {
+  const[taskList, setTaskList] = useState([
+    'Do laundry',
+    'Go to gym',
+    'Walk dog'
+  ])
   return (
     <SafeAreaView>
-      <ToDoList/>
+      <ToDoList tasks={taskList}/>
       <ToDoForm/>
     </SafeAreaView>
   );

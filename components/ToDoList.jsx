@@ -12,17 +12,23 @@ import {
   View,
   Text,
   ScrollView,
-  TextInput,
-  Button
 } from 'react-native';
 
 
-function ToDoList() {
+function ToDoList({tasks}) {
   return (
     <SafeAreaView>
       <ScrollView>
         <Pressable>
-          <View style={[styles.task, styles.completed]}>
+          {tasks.map((task) => (
+            <View>
+              <Text>
+                {task}
+              </Text>
+            </View>
+          ))}
+
+          {/* <View style={[styles.task, styles.completed]}>
             <Text style={styles.taskText}>Do laundry</Text>
           </View>
         </Pressable>
@@ -34,7 +40,7 @@ function ToDoList() {
         <Pressable>
           <View style={[styles.task, styles.completed]}>
             <Text style={styles.taskText}>Walk dog</Text>
-          </View>
+          </View> */}
         </Pressable>
       </ScrollView>
     </SafeAreaView>
