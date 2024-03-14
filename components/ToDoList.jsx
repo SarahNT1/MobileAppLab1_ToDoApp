@@ -20,9 +20,9 @@ function ToDoList({tasks}) {
     <SafeAreaView>
       <ScrollView>
         <Pressable>
-          {tasks.map((task) => (
-            <View>
-              <Text>
+          {tasks.map((task, index) => (
+            <View style={[styles.task]}>
+              <Text key={index} style={[styles.taskText]}>
                 {task}
               </Text>
             </View>
@@ -52,6 +52,7 @@ const styles = StyleSheet.create({
     padding: 10,
     borderBottomWidth: 1,
     borderColor: '#ccc',
+    alignItems: 'center',
   },
   completed: {
     backgroundColor: '#e0e0e0',

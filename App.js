@@ -10,10 +10,20 @@ export default function App() {
     'Go to gym',
     'Walk dog'
   ])
+
+  const addTask =(taskText)=>{
+    if(taskList.includes(taskText)){
+      alert("Already in task list.");
+    }
+    else{
+      setTaskList([...taskList, taskText]);
+    }
+  }
+
   return (
     <SafeAreaView>
       <ToDoList tasks={taskList}/>
-      <ToDoForm/>
+      <ToDoForm addTask={addTask}/>
     </SafeAreaView>
   );
 }
